@@ -1,0 +1,313 @@
+
+<!DOCTYPE>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOU Ca-ching</title>
+<link rel="apple-touch-icon-precomposed" href="res/apple-touch-icon-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="res/apple-touch-icon-72x72-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="res/apple-touch-icon-114x114-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="res/apple-touch-icon-144x144-precomposed.png" />
+<link id="page_favicon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADAElEQVQ4T3WSW2wMURzGv7l01q7dba2ubauuSWm0xC1CIkgEwZPrA4o+NMQlJEiEuAURSYWEEkWEEEk9IDxokKVtlBQtVVu9j7bT1TV7GWZnd+bMjCHRINuTnOSf8z/5/b/zfYfCIMtsWsNh0l1CUTAGu/PrnErVNP1g1TEn20yK6zIChzcYOes3ULacuQb55jTE9s545/uL2cXBusEBJqh4/eZ3dPbGqSCxJOPOt8GMA0YMpqYhwddo/Itry6bsE56mVNBfhix25l6ecY7l0jx5MMh3QA+CIv0wk1b5XUFHXVXptJ2v96UEBC4XLs6csapSVeJw+kZCFjvgGBpFpKcP6Y509LX18i/9DXNLbis9KQEPdsFnm7ekR5Yk1mNzwi5HQRkahnl9ye428fqje28Onq1FeFAPXlTkTg7Y8z70SRIiaUmE2kUMbZAv2VukI+frEfrb+H8UCDdzRrumHTjAeqYUa3Bzmqqil/+IxpaHaO2u23L0eE/5/6kNAD6XujJHrr7TavMUZiTNBKAqYGkaqhwBTeuIdlYG3t8vX7r8TJRPqYCv3LM/e/bWUxIlIKYGEVdiGM9NhBIWQNEJy0QNn6tvPblYWrW8/C20P5ABBV9qTlV6J8xfLDDWIyNWZHEWBcMmw9QlxK2hHC1Z8XWhqb733pEdr9Y+B8iAiTc2uobPWbc9kFUw3duivEavFVtYFLAyf5MVehiU3o/gp0ZkZA4Bx7rx7HHT0VUnPh4bAFzfkb9gxa7dfp01UR26g07+K2b55qPQN876faIFCKHjVSNy83Ihh5PQVS1ZVdW6Z3NZdxllmib95MKiq+MLCou9uaOQ0FWoRIE7jQFMyco/aqmIQfwSQzRMoEdEsJzjR02DfG7EwkOnqYqKCk5vvVJi18PbjCEZWRMKRjsZ1mRMPQlCFJJI6AlJ5qSoxIWbA5GglVWza8z0Ws6e3uFwOPjfJvr9flYQBBfDMB5CiJeQxHCAdtM0a/ul0NrE6smGYcQ4jhN1XQ9ZdaSoqCj+E65idkiuTx36AAAAAElFTkSuQmCC" rel="icon" type="image/x-icon">
+<style>
+body{
+    font: 16px sans-serif;
+    padding:0;
+    margin:0;
+}
+#content{
+    padding:0px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top: 30px;
+}
+h1{
+    pointer-events:visible;
+    cursor: pointer;
+    font-size:200px;
+    margin:0;
+    padding:0;
+}
+
+p {
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+#lastupdate{
+    margin-top:50px;
+}
+
+
+
+#lastcaching{
+    display:block;
+    position:absolute;
+    text-align:right;
+    top:20px;
+    right:2%;
+    font-size:12px;
+    background:rgba(255,255,255,.3);
+    border:1px solid #CCC;
+    padding:0 2px;
+    z-index:999;
+}
+#lastcaching table{
+    font-size:12px;
+    text-align:right;
+    margin-left:auto;
+}
+#lastcaching td{
+    padding:1px 2px;
+}
+#lastcaching td a{
+    color:black;
+    text-decoration:none;
+}
+#lastcaching td a:hover{
+    color:blue;
+    text-decoration:underline;
+}
+
+tr.newPayer{
+    color: rgb(0,200,0);
+}
+
+.userinfo{
+    width:0px;
+    height:0px;
+    border-top:1px solid #ccc;
+    position:absolute;
+    margin-left:0px;
+    pointer-events:none;
+    opacity:0;
+    -webkit-transition: all .3s ease-in-out;
+    overflow:hidden;
+}
+#lastcaching tr:hover{
+    background:#eee;
+}
+
+#lastCachingsTable tr.starter_pack, #lastCachingsTable tr.starter_packjp  {
+    background:yellow;
+}
+
+#lastcaching tr:hover .userinfo{
+    opacity:1;
+    height:200px;
+    width:420px;
+    margin-left:-220px;
+}
+#lastcaching #uinfo{
+    width:46%;
+    font-size:11px;
+    background:rgba(255,255,255,.1);
+    position:absolute;
+    top:95px;
+}
+#lastcaching #ustateInfo{
+    width:40%;
+    text-align:right;
+    left:55%;
+    font-size:11px;
+    background:rgba(0,0,0,.3);
+    position:absolute;
+    top:95px;
+}
+#uinfo span, #ustateInfo span{
+    font-weight:bold;
+    color:rgba(255,255,255,.4);
+}
+
+.panel{
+    width:180px;
+    height:100%;
+    background:rgba(0,0,0,.7);
+    padding:10px;
+    color:white;
+    text-align:left;
+    position:relative;
+}
+
+.panel img{
+    float:left;
+    margin-right:5px;
+}
+
+.panel .uid{
+    font-size:9px;
+    margin-bottom:3px;
+    color:rgba(255,255,255,.8)
+}
+.panel .uname{
+    font-weight:bold;
+    font-size:16px;
+}
+
+.panel .utype{
+    position:absolute;
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+    width:180px;
+    padding: 1px 0;
+    top:70px;
+    opacity:.5;
+    text-align: right;
+}
+
+#celeb{
+    pointer-events:none;
+    position:absolute;
+    left:0%;
+    text-align:center;
+    top:50%;
+    bottom:0;
+    right:0;
+}
+#nextupdate,#lastupdate{
+    font-size:12px;
+}
+.details{
+    color:#CCC;
+    font-size:12px;
+}
+#subgroup{
+    padding-left:10px;
+    font-size:12px;
+    color:#666;
+}
+#info{
+    padding:5px 20px;
+    border:1px dashed #999;
+    background:#ccc;
+}
+
+#config{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    height:20px;
+    font-size:9px;
+    background:#ccc;
+    padding-left:10px;
+    margin-bottom: 20px;
+    z-index:1;    
+}
+
+#config input{
+    font-size:9px;
+    margin-top:2px;
+}
+
+#loader{
+    position: absolute;
+    left: 200px;
+    top: 90px;
+    zoom:0.5;
+}
+
+@media (max-width: 480px) {
+    body{zoom: 0.63;padding: 0px 5px;}
+    #money{text-align:center;margin-top: 10px;}
+    #content{padding-top: 85px}
+    #lastcaching {
+        zoom: 1.3;
+        width: 450px;
+        left:100%;
+        right:5%;
+        margin-top: 60px;
+    }
+
+    #lastcaching tr:hover .userinfo{
+        height:220px;
+    }
+
+    #info{
+        zoom:1.5;
+    }
+    #config{
+        zoom:2.5;
+        height: 40px;
+        right: 0;
+    }
+
+    h1{font-size: 170px;}
+}
+
+
+@media (max-width: 320px) {
+#content{padding-top: 40px}
+    #config{
+        zoom:2.5;
+        height: 35px;
+    }
+    #lastcaching {
+        margin-top: 40px;
+    }
+
+    #info{
+        zoom:1.2;
+    }
+
+    h1{font-size: 115px;}
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div id="content">
+    <div id="config">
+        <b>From date:</b> <input type="date" id="fDate" value=""/>&nbsp;&nbsp;
+        <b>To date:</b> <input type="date" id="tDate" value=""/>&nbsp;&nbsp;
+        <input type="submit" value="Set" onclick="setDates()"/>&nbsp;&nbsp;
+        <input type="submit" value="Today" onclick="setDatesToday()"/>&nbsp;&nbsp;
+        <input type="submit" value="Yesterday" onclick="setDatesYesterday()"/>&nbsp;&nbsp;
+        <input type="submit" value="JOU" onclick="setApp('jou')"/>&nbsp;&nbsp;
+        <input type="submit" value="SHERLOCK" onclick="setApp('sherlock')"/>&nbsp;&nbsp;
+    </div>
+
+    <div id="loader">
+    </div>
+
+    <h1 id="money" onclick="refresh()"></h1>
+    <p id="moneyGross" style='color:blue;'></p>
+    <p id="moneyDetail"></p>
+    <p id="categoryDetail"></p>
+    <p id="refund" style="color:red"></p>
+    <p id="actualizando" style="display:none">ACTUALIZANDO...</p>
+    <p>
+        <span id="lastupdate"></span>&nbsp;&nbsp;
+        <span id="nextupdate"></span>
+    </p>
+
+
+    <div id="info">
+        <p id="platformSelectors">
+          
+        </p>
+        <div id="platformInfo"> 
+            
+        </div>
+    </div>
+
+	<p id="bygroup"></p>
+	<p id="bymoment"></p>
+	 
+    <p id="bytype"></p>
+   
+    <p id="byabgroup"></p>
+    
+    <p id="unique"></p>
+
+    <p id="lastcaching"></p>
+    <p id="celeb"></p>
+</div>
+
+<script src="thrillo.js"></script>
+</body>
+</html>

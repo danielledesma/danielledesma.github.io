@@ -1,0 +1,38 @@
+/*
+{
+  "name": "Ca-Ching",
+  "description": "Te avisa cuando pagan las viejardas.",
+  "version": "0.2",
+  "manifest_version": 2,
+  "app": {
+    "launch": {
+         "web_url": "https://dl.dropboxusercontent.com/u/328684/caching/index2.html?noSound=true"
+      }
+    },
+  "background": { "scripts": ["background.js"] },
+  "icons": { "16": "res/money_bag-16.png", "128": "res/money_bag-128.png", "48": "res/money_bag-48.png" },
+  "permissions": [
+    "notifications", "background", "https://dl.dropboxusercontent.com/u/328684/caching/"
+  ]
+}
+*/
+{
+  "name": "Ca-Ching!",
+  "description": "Te avisa cuando pagan las viejardas.",
+  "version": "1.4",
+  "manifest_version": 2,
+    "browser_action": {
+    "default_icon": {                    // optional
+      "19": "res/money_bag-19.png",           // optional
+      "38": "res/money_bag-38.png"            // optional
+    },
+    "default_title": "Ca-Ching!"      // optional; shown in tooltip
+  },
+      "background": { "scripts": ["background.js"] },
+  "icons": { "16": "res/money_bag-16.png", "128": "res/money_bag-128.png", "48": "res/money_bag-48.png" },
+  "permissions": [
+    "notifications", "background", "https://dl.dropboxusercontent.com/", "http://mysterygamenode-journalsofunknown.azurewebsites.net/","https://dl.dropboxusercontent.com/u/328684/caching/update/"
+  ],
+  "update_url": "https://dl.dropboxusercontent.com/u/328684/caching/update/updates.xml",
+  "options_page": "options.html"
+}
